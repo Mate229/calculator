@@ -18,7 +18,7 @@ function divide(a, b) {
 
 let firstNumber, secondNumber, operator;
 
-function operate() {
+function operate(operator) {
     switch (operator) {
         case "+":
             return add(firstNumber, secondNumber);
@@ -51,3 +51,20 @@ digitButtons.forEach((digit) => {
         }
     });
 });
+
+const operators = document.querySelectorAll(".operator");
+operators.forEach((op) => {
+    op.addEventListener("click", () => {
+        firstNumber = parseInt(display.textContent);
+        operator = op.textContent;
+        firstClick = false;
+    })
+});
+
+const equal = document.querySelector("#equal");
+equal.addEventListener("click", () => {
+    secondNumber = parseInt(display.textContent);
+    const result = operate(operator);
+    display.textContent = result;
+    firstClick = false;
+})
