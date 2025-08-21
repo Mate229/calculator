@@ -58,6 +58,8 @@ const display = document.querySelector("#display");
 const digitButtons = document.querySelectorAll(".digit");
 // I declare a variable that will allows me to identify the first click
 let firstClick = false;
+// I declare a variable that will help to identify wether a number is entered after an operator
+let waitingForNumber = false;
 
 digitButtons.forEach((digit) => {
     digit.addEventListener("click", () => {
@@ -69,6 +71,9 @@ digitButtons.forEach((digit) => {
         } else {
             display.textContent += buttonValue;
         }
+
+        // A number is being entered so false
+        waitingForNumber = false;
     });
 });
 
@@ -77,6 +82,12 @@ let operatorFirstClick = false;
 const operators = document.querySelectorAll(".operator");
 operators.forEach((op) => {
     op.addEventListener("click", () => {
+        // An operator is clicked so we're expecting a number
+        if (waitingForNumber) {
+            // We're expecting a number but user click another operator, we skip and wait for a number
+            return;
+        }
+
         if (!operatorFirstClick) {
             firstNumber = Number(display.textContent);
             operator = op.textContent;
@@ -92,6 +103,9 @@ operators.forEach((op) => {
             // Update operator in case user change operator
             operator = op.textContent;
         }
+
+        // an operator is clicked so we're expecting a number
+        waitingForNumber = true;
     })
 });
 
