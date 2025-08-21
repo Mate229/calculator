@@ -13,7 +13,11 @@ function multiply(a, b) {
 };
 
 function divide(a, b) {
-    return a / b;
+    if (b === 0) {
+        return "Error";
+    } else {
+        return a / b
+    }
 };
 
 let firstNumber, secondNumber, operator;
