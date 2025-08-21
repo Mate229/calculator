@@ -20,6 +20,18 @@ function divide(a, b) {
     }
 };
 
+function remainder(a, b) {
+    if (b === 0) {
+        return "Error";
+    } else {
+        return a % b
+    }
+};
+
+function power(a, b) {
+    return a ** b;
+}
+
 let firstNumber, secondNumber, operator;
 
 function operate(operator) {
@@ -35,6 +47,10 @@ function operate(operator) {
             break;
         case "/":
             return divide(firstNumber, secondNumber);
+        case "%":
+            return remainder(firstNumber, secondNumber);
+        case "xy":
+            return power(firstNumber, secondNumber);
     }
 }
 
@@ -102,4 +118,14 @@ point.addEventListener("click", () => {
         display.textContent += ".";
     }
 });
+
+const del = document.querySelector("#del");
+del.addEventListener("click", () => {
+    display.textContent = display.textContent.slice(0, -1);
+})
+
+const pi = document.querySelector("#pi");
+pi.addEventListener("click", () => {
+    display.textContent = Math.PI;
+})
 
