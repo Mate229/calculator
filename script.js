@@ -68,3 +68,8 @@ equal.addEventListener("click", () => {
     display.textContent = result;
     firstClick = false;
 })
+
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", () => {
+    display.textContent = 0;
+})
