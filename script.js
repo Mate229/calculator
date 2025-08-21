@@ -33,3 +33,21 @@ function operate() {
             return divide(firstNumber, secondNumber);
     }
 }
+
+const display = document.querySelector("#display");
+const digitButtons = document.querySelectorAll(".digit");
+// I declare a variable that will allows me to identify the first click
+let firstClick = false;
+
+digitButtons.forEach((digit) => {
+    digit.addEventListener("click", () => {
+        const buttonValue = digit.textContent;
+        
+        if (!firstClick) {
+            display.textContent = buttonValue;
+            firstClick = true;
+        } else {
+            display.textContent += buttonValue;
+        }
+    });
+});
