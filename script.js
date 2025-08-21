@@ -58,12 +58,12 @@ const operators = document.querySelectorAll(".operator");
 operators.forEach((op) => {
     op.addEventListener("click", () => {
         if (!operatorFirstClick) {
-            firstNumber = parseInt(display.textContent);
+            firstNumber = Number(display.textContent);
             operator = op.textContent;
             firstClick = false;
             operatorFirstClick = true;
         } else {
-            secondNumber = parseInt(display.textContent);
+            secondNumber = Number(display.textContent);
             const result = operate(operator);
             display.textContent = result;
             // Update the first number in case user continue with operator
@@ -77,7 +77,7 @@ operators.forEach((op) => {
 
 const equal = document.querySelector("#equal");
 equal.addEventListener("click", () => {
-    secondNumber = parseInt(display.textContent);
+    secondNumber = Number(display.textContent);
     const result = operate(operator);
     display.textContent = result;
     // to restart digit click
@@ -88,7 +88,7 @@ equal.addEventListener("click", () => {
 
 const clear = document.querySelector("#clear");
 clear.addEventListener("click", () => {
-    display.textContent = "";
+    display.textContent = 0;
     operatorFirstClick = false;
 });
 
