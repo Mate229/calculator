@@ -52,12 +52,26 @@ digitButtons.forEach((digit) => {
     });
 });
 
+let operatorFirstClick = false;
+
 const operators = document.querySelectorAll(".operator");
 operators.forEach((op) => {
     op.addEventListener("click", () => {
-        firstNumber = parseInt(display.textContent);
-        operator = op.textContent;
-        firstClick = false;
+        if (!operatorFirstClick) {
+            firstNumber = parseInt(display.textContent);
+            operator = op.textContent;
+            firstClick = false;
+            operatorFirstClick = true;
+        } else {
+            secondNumber = parseInt(display.textContent);
+            const result = operate(operator);
+            display.textContent = result;
+            // Update the first number in case user continue with operator
+            firstNumber = result;
+            firstClick = false;
+            // Update operator in case user change operator
+            operator = op.textContent;
+        }
     })
 });
 
@@ -66,10 +80,15 @@ equal.addEventListener("click", () => {
     secondNumber = parseInt(display.textContent);
     const result = operate(operator);
     display.textContent = result;
+    // to restart digit click
     firstClick = false;
-})
+    // to restart operator click
+    operatorFirstClick = false;
+});
 
 const clear = document.querySelector("#clear");
 clear.addEventListener("click", () => {
-    display.textContent = 0;
-})
+    display.textContent = "";
+    operatorFirstClick = false;
+});
+
