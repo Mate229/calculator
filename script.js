@@ -96,3 +96,10 @@ clear.addEventListener("click", () => {
     operatorFirstClick = false;
 });
 
+const point = document.querySelector("#point");
+point.addEventListener("click", () => {
+    if (!display.textContent.includes(".")) {
+        display.textContent += ".";
+    }
+});
+
