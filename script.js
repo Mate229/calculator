@@ -143,3 +143,20 @@ pi.addEventListener("click", () => {
     display.textContent = Math.PI;
 })
 
+// To randomize the color of the signature
+function generateRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;
+}
+
+function changeColor() {
+    const signature = document.querySelector(".signature");
+    setInterval(() => {
+        signature.style.color = generateRandomColor();
+    }, 500);
+}
+
+changeColor();

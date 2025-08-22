@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Happy+Monkey&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
     <script src="./script.js" defer></script>
 </head>
 <body>
     <div id="container">
         <div id="display">0</div>
         <div id="buttons">
-            <button class="digit" id="one">1</button>
-            <button class="digit" id="two">2</button>
-            <button class="digit" id="three">3</button>
-            <button class="operator" id="divide">/</button>
-            <button class="digit" id="four">4</button>
-            <button class="digit" id="five">5</button>
-            <button class="digit" id="six">6</button>
-            <button class="operator" id="multiply">*</button>
-            <button class="digit" id="seven">7</button>
-            <button class="digit" id="height">8</button>
-            <button class="digit" id="nine">9</button>
-            <button class="operator" id="substract">-</button>
-            <button id="clear">C</button>
-            <button class="digit" id="zero">0</button>
-            <button id="equal">=</button>
-            <button class="operator" id="add">+</button>
-            <button id="point">.</button>
-            <button id="del">Del</button>
-            <button class="operator" id="remainder">%</button>
-            <button class="operator" id="power">x<sup>y</sup></button>
-            <button id="pi">π</button>
+            <button class="large" id="clear">Clear</button>
+            <button class="operator hover" id="power">x<sup>y</sup></button>
+            <button class="operator hover" id="remainder">%</button>
+            <button class="digit hover" id="one">1</button>
+            <button class="digit hover" id="two">2</button>
+            <button class="digit hover" id="three">3</button>
+            <button class="operator hover" id="divide">/</button>
+            <button class="digit hover" id="four">4</button>
+            <button class="digit hover" id="five">5</button>
+            <button class="digit hover" id="six">6</button>
+            <button class="operator hover" id="multiply">*</button>
+            <button class="digit hover" id="seven">7</button>
+            <button class="digit hover" id="height">8</button>
+            <button class="digit hover" id="nine">9</button>
+            <button class="operator hover" id="substract">-</button>
+            <button class="hover" id="point">.</button>
+            <button class="digit hover" id="zero">0</button>
+            <button class="hover" id="pi">π</button>
+            <button class="operator hover" id="add">+</button>
+            <button class="large" id="del">Del</button>
+            <button class="large hover" id="equal">=</button>
         </div>
+        <div class="signature">By<br>Mate229</div>
     </div>
 </body>
 </html>
